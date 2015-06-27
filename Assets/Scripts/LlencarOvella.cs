@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class LlençarOvella : MonoBehaviour {
+public class LlencarOvella : MonoBehaviour {
 
 	public float minimumAngle;
 	public float maxMaximumAngle;
@@ -68,7 +68,7 @@ public class LlençarOvella : MonoBehaviour {
 
 		//if (ovella != null) Debug.Log (ovella.name);
 		if (!attached) timeSinceLastLaunch += Time.deltaTime;
-		if (ovella == null || (!attached && (ovella.rigidbody2D.velocity.magnitude == 0))) {
+		if (ovella == null || (!attached && (ovella.GetComponent<Rigidbody2D>().velocity.magnitude == 0))) {
 			createOvella();
 		}
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
@@ -111,13 +111,13 @@ public class LlençarOvella : MonoBehaviour {
 		else {
 			if (attached & !waiting){
 				attached=false;
-				ovella.rigidbody2D.isKinematic=false;
-				Vector2 OP= (ovella.rigidbody2D.position-pivotPoint.rigidbody2D.position)*startingAngularSpeed*Mathf.PI/180;
-				ovella.rigidbody2D.velocity = new Vector2(OP.y,-OP.x);
-				ovella.rigidbody2D.angularVelocity = -10;
+				ovella.GetComponent<Rigidbody2D>().isKinematic=false;
+				Vector2 OP= (ovella.GetComponent<Rigidbody2D>().position-pivotPoint.GetComponent<Rigidbody2D>().position)*startingAngularSpeed*Mathf.PI/180;
+				ovella.GetComponent<Rigidbody2D>().velocity = new Vector2(OP.y,-OP.x);
+				ovella.GetComponent<Rigidbody2D>().angularVelocity = -10;
 			}
 			if (time < startTime + finalTime)angle = maximumAngle + (time - startTime) * finalAngularSpeed;
 		}
-		gameObject.rigidbody2D.MoveRotation(angle);
+		gameObject.GetComponent<Rigidbody2D>().MoveRotation(angle);
 	}
 }

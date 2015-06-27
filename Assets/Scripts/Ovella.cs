@@ -18,7 +18,7 @@ public class Ovella : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other) {
 		if (!chocat) {
-						LlençarOvella aux=transform.parent.GetComponent<LlençarOvella> ();
+						LlencarOvella aux=transform.parent.GetComponent<LlencarOvella> ();
 						aux.OvellaChoca();
 						chocat = true;
 				}
