@@ -46,8 +46,7 @@ public class LlencarOvella : MonoBehaviour {
 						ovella = Instantiate (prefabOvella, transform.position + transform.rotation * prefabOvella.transform.position, transform.rotation * prefabOvella.transform.rotation) as GameObject;
 						ovella.transform.parent = transform;
 						attached = true;
-						waiting = true;
-						time = 1000;
+						waiting = true;	
 				}
 		}
 
@@ -60,12 +59,9 @@ public class LlencarOvella : MonoBehaviour {
 	}
 
 	void Update (){
-
-
-
-
-
-
+		
+		
+		
 		//if (ovella != null) Debug.Log (ovella.name);
 		if (!attached) timeSinceLastLaunch += Time.deltaTime;
 		if (ovella == null || (!attached && (ovella.GetComponent<Rigidbody2D>().velocity.magnitude == 0))) {
@@ -84,17 +80,24 @@ public class LlencarOvella : MonoBehaviour {
 			startingAngularSpeed=maxStartingAngularSpeed*(Force.value-Force.minValue)/(Force.maxValue-Force.minValue);
 			Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			pz.z=0;
-			Vector2 OP = pz - pivotPoint.transform.position;
-			float R = (pivotPoint.transform.position - ovella.transform.position).magnitude;
+			Vector3 OP = pz - pivotPoint.transform.position;
+			OP.z=0;
+			Vector3 PivotOvella = pivotPoint.transform.position - ovella.transform.position;
+			PivotOvella.z=0;
+			float R = PivotOvella.magnitude;
 			if(OP.magnitude<=R){
 				maximumAngle = -60;
 			}else{
 				float theta = Mathf.Acos (R / OP.magnitude);
 				float alpha = Mathf.Atan2 (OP.y, OP.x);
 				float beta = (theta + alpha)*180/Mathf.PI;
-				maximumAngle=beta-180;
+				Vector3 ini=pivotPoint.transform.position;
+			
+				ini.z=-10;
+				Debug.DrawRay(ini,new Vector3(Mathf.Cos(beta),Mathf.Sin (beta))*R);
+				maximumAngle=beta-187.41f;
 			}
-			Debug.Log (maximumAngle);
+
 			startTime = Mathf.Abs (maximumAngle - minimumAngle) / startingAngularSpeed;		
 			finalTime = Mathf.Abs (maximumAngle - minimumAngle) / finalAngularSpeed;
 			time=0;
