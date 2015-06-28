@@ -32,6 +32,7 @@ public class LlencarOvella : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Input.simulateMouseWithTouches=true;
 		attached = true;
 		waiting = true;
 		time = 1000;
