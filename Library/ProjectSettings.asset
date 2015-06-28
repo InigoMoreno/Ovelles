@@ -7,16 +7,15 @@ PlayerSettings:
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
-  targetGlesGraphics: 1
+  targetGlesGraphics: -1
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: OvellesINC
   productName: Ovelles
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -75,7 +74,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Company.ProductName
+  bundleIdentifier: com.OvellesINC.Ovelles
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -119,7 +118,6 @@ PlayerSettings:
     serializedVersion: 2
     rgba: 0
   iOSLaunchScreenFillPct: 100
-  iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
@@ -132,9 +130,12 @@ PlayerSettings:
   - width: 320
     height: 180
     banner: {fileID: 0}
-  androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - m_Icon: {fileID: 0}
+      m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -382,8 +383,12 @@ PlayerSettings:
   iOS::Architecture: 2
   iOS::ScriptingBackend: 0
   boolPropertyNames:
+  - WebGL::analyzeBuildSize
   - WebGL::dataCaching
+  - WebGL::useEmbeddedResources
+  WebGL::analyzeBuildSize: 0
   WebGL::dataCaching: 0
+  WebGL::useEmbeddedResources: 0
   stringPropertyNames:
   - WebGL::emscriptenArgs
   - WebGL::template
