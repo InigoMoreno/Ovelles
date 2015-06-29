@@ -2,10 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\ButtonControler.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu\ButtonControler.cs" Line="13" Column="30" />
+      <File FileName="Assets\Scripts\Menu\ButtonControler.cs" Line="78" Column="4" />
       <File FileName="Assets\Scripts\BackgroundRemover.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LlencarOvella.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Ovella.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Desktop\Unity Projects\2D\Assets\Scripts\GameManager.cs" Line="26" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
