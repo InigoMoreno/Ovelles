@@ -19,14 +19,6 @@ public class Ovella : MonoBehaviour {
 	void Update () {
 		//Debug.Log (gameObject.name);
 	}
-
-	void OnCollisionStay2D (Collision2D other) {
-		if (!chocat) {
-						aux.OvellaChoca();
-						chocat = true;
-				}
-	}
-
 	void OnCollisionEnter2D (Collision2D other) {
 		if (!chocat) {
 			aux.OvellaChoca();

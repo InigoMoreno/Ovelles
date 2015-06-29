@@ -13,7 +13,6 @@ public class LlencarOvella : MonoBehaviour {
 	public Slider Force;
 	public float maxChargeTime;
 	public float timeToNewOvella;
-	public GameObject Troll;
 
 	private float startTime;
 	private float finalTime;
@@ -42,12 +41,11 @@ public class LlencarOvella : MonoBehaviour {
 
 	void createOvella (){
 			if (!attached) {
-						if (ovella != null)
-								ovella.transform.parent = transform.root;
-						ovella = Instantiate (prefabOvella, transform.position + transform.rotation * prefabOvella.transform.position, transform.rotation * prefabOvella.transform.rotation) as GameObject;
-						ovella.transform.parent = transform;
-						attached = true;
-						if (time>=startTime)waiting = true;
+						
+								ovella = Instantiate (prefabOvella, transform.position + transform.rotation * prefabOvella.transform.position, transform.rotation * prefabOvella.transform.rotation) as GameObject;
+								ovella.transform.parent = transform;
+								attached = true;
+								if (time>=startTime)waiting = true;
 				}
 		}
 
@@ -60,12 +58,6 @@ public class LlencarOvella : MonoBehaviour {
 	}
 
 	void Update (){
-		Color Trollamen= Troll.GetComponent<SpriteRenderer>().color;
-		if (attached)	Trollamen=Color.red;
-		else 			Trollamen=Color.white;
-		if (waiting)    Trollamen.a=0.5f;
-		else 			Trollamen.a=1f;
-		Troll.GetComponent<SpriteRenderer>().color=Trollamen;
 		
 		
 		//if (ovella != null) Debug.Log (ovella.name);
@@ -123,6 +115,7 @@ public class LlencarOvella : MonoBehaviour {
 			if (attached & !waiting){
 				attached=false;
 				ovella.GetComponent<Rigidbody2D>().isKinematic=false;
+				ovella.GetComponent<CircleCollider2D>().isTrigger=false;
 				//ovella.transform.SetParent(null);
 				Vector2 PivotPos = transform.position;
 				float speed= (ovella.GetComponent<Rigidbody2D>().position-PivotPos).magnitude*startingAngularSpeed*Mathf.PI/180;
