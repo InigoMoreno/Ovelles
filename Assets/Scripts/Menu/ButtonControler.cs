@@ -3,27 +3,45 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ButtonControler : MonoBehaviour {
-	public Sprite modeBackground;
-	public Sprite mainBackground;
-	public GameObject playButton;
-	public Image background;
-	public GameObject modeButtons;
 
-	// Use this for initialization
-	void Start () {
-		modeButtons.SetActive (false);
-		playButton.SetActive (true);
-		background.sprite = mainBackground;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Awake(){
+		DontDestroyOnLoad (gameObject);
 	}
 
 	public void PlayButton(){
-		playButton.SetActive (false);
-		background.sprite = modeBackground;
-		modeButtons.SetActive (true);
+		Application.LoadLevel (1);
+		StartCoroutine (WaitPlay (2f));		
 	}
+	IEnumerator WaitPlay (float seconds){
+		yield return new WaitForSeconds(seconds);
+		
+		Button button = GameObject.Find("Solo").GetComponent<Button> ();
+		button.onClick.AddListener (delegate {
+			Campanya ();
+		});
+		Debug.Log ("ok");
+	}
+
+	public void Campanya(){
+		Application.LoadLevel (2);
+		StartCoroutine (WaitCampanya (2f));		
+	}
+	IEnumerator WaitCampanya (float seconds){
+		yield return new WaitForSeconds(seconds);
+
+		Button button = GameObject.Find("Jungle").GetComponent<Button> ();
+		button.onClick.AddListener (delegate {
+			Jungla ();
+		});
+	}
+
+	public void Jungla(){
+		Application.LoadLevel (3);
+	}
+
+	public void ReturnButton(){
+
+	}
+
+
 }
