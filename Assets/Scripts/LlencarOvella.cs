@@ -116,7 +116,7 @@ public class LlencarOvella : MonoBehaviour {
 				attached=false;
 				ovella.GetComponent<Rigidbody2D>().isKinematic=false;
 				ovella.GetComponent<CircleCollider2D>().isTrigger=false;
-				//ovella.transform.SetParent(null);
+				ovella.transform.SetParent(null);
 				Vector2 PivotPos = transform.position;
 				float speed= (ovella.GetComponent<Rigidbody2D>().position-PivotPos).magnitude*startingAngularSpeed*Mathf.PI/180;
 				Vector2 OvellaPos = ovella.transform.position;
