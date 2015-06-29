@@ -6,7 +6,7 @@ public class ButtonControler : MonoBehaviour {
 	private SoundManager soundmanager;
 
 	void Awake(){
-		soundmanager = GameObject.Find ("SoundManager").GetComponent<SoundManager> ();
+		soundmanager = GameObject.Find ("SoundManagerMenu").GetComponent<SoundManager> ();
 	}
 
 	// Intro
