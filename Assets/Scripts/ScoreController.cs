@@ -13,5 +13,6 @@ public class ScoreController : MonoBehaviour {
 	public static void AddScore (int addedScore){
 		Score+=addedScore;
 		GameObject.FindGameObjectWithTag("Score").GetComponent<Text>().text="Puntuació: "+Score;
+		GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundController>().play("encertar");
 	}
 }
