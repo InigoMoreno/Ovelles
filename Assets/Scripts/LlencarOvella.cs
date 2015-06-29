@@ -12,7 +12,6 @@ public class LlencarOvella : MonoBehaviour {
 	public GameObject prefabOvella;
 	public Slider Force;
 	public float maxChargeTime;
-	public Transform Troll;
 	public float timeToNewOvella;
 
 	private float startTime;
@@ -42,12 +41,11 @@ public class LlencarOvella : MonoBehaviour {
 
 	void createOvella (){
 			if (!attached) {
-						if (ovella != null)
-								ovella.transform.parent = transform.root;
-						ovella = Instantiate (prefabOvella, transform.position + transform.rotation * prefabOvella.transform.position, transform.rotation * prefabOvella.transform.rotation) as GameObject;
-						ovella.transform.parent = transform;
-						attached = true;
-						if (time>=startTime)waiting = true;
+						
+								ovella = Instantiate (prefabOvella, transform.position + transform.rotation * prefabOvella.transform.position, transform.rotation * prefabOvella.transform.rotation) as GameObject;
+								ovella.transform.parent = transform;
+								attached = true;
+								if (time>=startTime)waiting = true;
 				}
 		}
 
@@ -60,13 +58,12 @@ public class LlencarOvella : MonoBehaviour {
 	}
 
 	void Update (){
-
-
 		
 		
 		//if (ovella != null) Debug.Log (ovella.name);
 		if (!attached) timeSinceLastLaunch += Time.deltaTime;
 		if (ovella == null || (!attached && (ovella.GetComponent<Rigidbody2D>().velocity.magnitude == 0))) {
+			attached = false;
 			createOvella();
 		}
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
@@ -118,6 +115,8 @@ public class LlencarOvella : MonoBehaviour {
 			if (attached & !waiting){
 				attached=false;
 				ovella.GetComponent<Rigidbody2D>().isKinematic=false;
+				ovella.GetComponent<CircleCollider2D>().isTrigger=false;
+				//ovella.transform.SetParent(null);
 				Vector2 PivotPos = transform.position;
 				float speed= (ovella.GetComponent<Rigidbody2D>().position-PivotPos).magnitude*startingAngularSpeed*Mathf.PI/180;
 				Vector2 OvellaPos = ovella.transform.position;

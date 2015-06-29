@@ -55,7 +55,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 193698}
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: e5bf58a1c06d5314b96f3aae73dee496, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 1.08000004, y: 0}
   serializedVersion: 2

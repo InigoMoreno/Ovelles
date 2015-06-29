@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tubs
   - Terra
+  - Score
   layers:
   - Default
   - TransparentFX
@@ -46,8 +47,14 @@ TagManager:
   - name: Enrere
     uniqueID: 4070207171
     locked: 0
+  - name: Mica Enrere
+    uniqueID: 3934541273
+    locked: 0
   - name: Ovella
     uniqueID: 3397688195
+    locked: 0
+  - name: Mica Davant
+    uniqueID: 591604533
     locked: 0
   - name: Davant
     uniqueID: 1915357503

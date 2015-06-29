@@ -3,8 +3,14 @@ using System.Collections;
 
 public class Ovella : MonoBehaviour {
 
+	public int scoreAdd=5000;
+
 	private bool chocat;
-	//public LlençarOvella aux;
+	private LlencarOvella aux;
+
+	void Awake () {
+		aux = GameObject.Find ("Cullera catapulta").GetComponent <LlencarOvella> ();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -15,17 +21,15 @@ public class Ovella : MonoBehaviour {
 	void Update () {
 		//Debug.Log (gameObject.name);
 	}
-
 	void OnCollisionEnter2D (Collision2D other) {
 		if (!chocat) {
-						LlencarOvella aux=transform.parent.GetComponent<LlencarOvella> ();
-						aux.OvellaChoca();
-						chocat = true;
-				}
+			aux.OvellaChoca();
+			chocat = true;
+		}
 	}
-
+	
 	void OnTriggerEnter2D (Collider2D other){
-		if (other.gameObject.name.Contains ("Llop"))
-						Destroy (gameObject);
+		if (other.gameObject.name.Contains ("Llop"))Destroy (gameObject);
+		else if (other.gameObject.name.Contains ("Tub"))ScoreController.AddScore(scoreAdd);
 	}
 }
