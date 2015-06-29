@@ -29,6 +29,7 @@ GameObject:
   - 222: {fileID: 22227158}
   - 114: {fileID: 11450846}
   - 114: {fileID: 11422822}
+  - 95: {fileID: 9574750}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -36,6 +37,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &9574750
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c13849bbcb3835446be3ff18fcbc2a37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11421228
 MonoBehaviour:
   m_ObjectHideFlags: 1

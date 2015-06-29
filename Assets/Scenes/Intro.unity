@@ -98,6 +98,7 @@ GameObject:
   - 222: {fileID: 86655773}
   - 114: {fileID: 86655772}
   - 114: {fileID: 86655771}
+  - 95: {fileID: 86655774}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -202,6 +203,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86655769}
+--- !u!95 &86655774
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86655769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9bd19c869a409b458668fb7f32262bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &229559435
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11406598, guid: 75c711c2d42dd3b40ba54bbdaa7b39e9,

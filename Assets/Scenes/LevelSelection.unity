@@ -373,6 +373,7 @@ GameObject:
   - 222: {fileID: 584066086}
   - 114: {fileID: 584066085}
   - 114: {fileID: 584066084}
+  - 95: {fileID: 584066087}
   m_Layer: 5
   m_Name: Level 1
   m_TagString: Untagged
@@ -477,6 +478,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584066082}
+--- !u!95 &584066087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584066082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9bd19c869a409b458668fb7f32262bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &628061736
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +798,7 @@ GameObject:
   - 224: {fileID: 895523896}
   - 222: {fileID: 895523898}
   - 114: {fileID: 895523897}
+  - 95: {fileID: 895523899}
   m_Layer: 5
   m_Name: LevelSelect
   m_TagString: Untagged
@@ -832,6 +851,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895523895}
+--- !u!95 &895523899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895523895}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d60c7aac57e5a5143b18cb58fe0cf82e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1161221655
 Prefab:
   m_ObjectHideFlags: 0
