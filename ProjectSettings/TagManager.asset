@@ -7,6 +7,7 @@ TagManager:
   - Tubs
   - Terra
   - Score
+  - Sound
   layers:
   - Default
   - TransparentFX

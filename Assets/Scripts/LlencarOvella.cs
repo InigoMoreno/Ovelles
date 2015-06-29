@@ -67,7 +67,7 @@ public class LlencarOvella : MonoBehaviour {
 			createOvella();
 		}
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-						chargetime = 0;
+			chargetime = 0;
 
 		}
 		if (Input.GetKey (KeyCode.Mouse0)){
@@ -103,6 +103,7 @@ public class LlencarOvella : MonoBehaviour {
 			time=0;
 			waiting=false;
 			timeSinceLastLaunch=0;
+			GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundController>().play("catapulta");
 		}
 	}
 	// Update is called once per frame
@@ -122,6 +123,7 @@ public class LlencarOvella : MonoBehaviour {
 				Vector2 OvellaPos = ovella.transform.position;
 				ovella.GetComponent<Rigidbody2D>().velocity = (Objective-OvellaPos).normalized*speed;
 				ovella.GetComponent<Rigidbody2D>().angularVelocity = -10;
+				GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundController>().play("ovella volant");
 			}
 			if (time < startTime + finalTime)angle = maximumAngle + (time - startTime) * finalAngularSpeed;
 		}
