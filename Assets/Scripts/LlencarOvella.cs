@@ -12,8 +12,8 @@ public class LlencarOvella : MonoBehaviour {
 	public GameObject prefabOvella;
 	public Slider Force;
 	public float maxChargeTime;
-	public Transform Troll;
 	public float timeToNewOvella;
+	public GameObject Troll;
 
 	private float startTime;
 	private float finalTime;
@@ -60,13 +60,18 @@ public class LlencarOvella : MonoBehaviour {
 	}
 
 	void Update (){
-
-
+		Color Trollamen= Troll.GetComponent<SpriteRenderer>().color;
+		if (attached)	Trollamen=Color.red;
+		else 			Trollamen=Color.white;
+		if (waiting)    Trollamen.a=0.5f;
+		else 			Trollamen.a=1f;
+		Troll.GetComponent<SpriteRenderer>().color=Trollamen;
 		
 		
 		//if (ovella != null) Debug.Log (ovella.name);
 		if (!attached) timeSinceLastLaunch += Time.deltaTime;
 		if (ovella == null || (!attached && (ovella.GetComponent<Rigidbody2D>().velocity.magnitude == 0))) {
+			attached = false;
 			createOvella();
 		}
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {

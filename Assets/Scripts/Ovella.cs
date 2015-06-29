@@ -20,13 +20,20 @@ public class Ovella : MonoBehaviour {
 		//Debug.Log (gameObject.name);
 	}
 
-	void OnCollisionEnter2D (Collision2D other) {
+	void OnCollisionStay2D (Collision2D other) {
 		if (!chocat) {
 						aux.OvellaChoca();
 						chocat = true;
 				}
 	}
 
+	void OnCollisionEnter2D (Collision2D other) {
+		if (!chocat) {
+			aux.OvellaChoca();
+			chocat = true;
+		}
+	}
+	
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.name.Contains ("Llop"))
 						Destroy (gameObject);
