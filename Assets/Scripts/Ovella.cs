@@ -4,7 +4,11 @@ using System.Collections;
 public class Ovella : MonoBehaviour {
 
 	private bool chocat;
-	//public LlençarOvella aux;
+	private LlencarOvella aux;
+
+	void Awake () {
+		aux = GameObject.Find ("Cullera catapulta").GetComponent <LlencarOvella> ();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +22,6 @@ public class Ovella : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other) {
 		if (!chocat) {
-						LlencarOvella aux=transform.parent.GetComponent<LlencarOvella> ();
 						aux.OvellaChoca();
 						chocat = true;
 				}
