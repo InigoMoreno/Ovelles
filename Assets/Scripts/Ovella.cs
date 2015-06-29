@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Ovella : MonoBehaviour {
 
+	public int scoreAdd=5000;
+
 	private bool chocat;
 	private LlencarOvella aux;
 
@@ -27,7 +29,7 @@ public class Ovella : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D (Collider2D other){
-		if (other.gameObject.name.Contains ("Llop"))
-						Destroy (gameObject);
+		if (other.gameObject.name.Contains ("Llop"))Destroy (gameObject);
+		else if (other.gameObject.name.Contains ("Tub"))ScoreController.AddScore(scoreAdd);
 	}
 }
