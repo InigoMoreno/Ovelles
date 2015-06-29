@@ -30,6 +30,9 @@ public class Ovella : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.name.Contains ("Llop"))Destroy (gameObject);
-		else if (other.gameObject.name.Contains ("Tub"))ScoreController.AddScore(scoreAdd);
+		else if (other.gameObject.name.Contains ("Tub")){
+			ScoreController.AddScore(scoreAdd);
+			Destroy (gameObject);
+		}
 	}
 }
